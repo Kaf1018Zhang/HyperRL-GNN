@@ -1,0 +1,462 @@
+PS C:\Users\Laplace\Desktop\CompSci\Independent\DP-GNN> python experiments/train_controller.py
+=== Training strategy controller on PROTEINS ===
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: PROTEINS
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 5080') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\torch\nn\modules\module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  return t.to(
+
+  | Name  | Type           | Params | Mode 
+-------------------------------------------------
+0 | model | ModuleExecutor | 12.9 K | train
+-------------------------------------------------
+12.9 K    Trainable params
+0         Non-trainable params
+12.9 K    Total params
+0.051     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Sanity Checking: |                                                                                              | 0/? [00:00<?, ?it/s]C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.
+Sanity Checking DataLoader 0:   0%|                                                                             | 0/2 [00:00<?, ?it/s]C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\utilities\data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 2. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`. 
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 151.73it/s, v_num=0, val_loss=0.629, val_acc=0.700, train_acc=0.693]`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 143.96it/s, v_num=0, val_loss=0.629, val_acc=0.700, train_acc=0.693] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 169.57it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.7447916865348816     │
+│         test_loss         │    0.5854642391204834     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on PROTEINS = 0.7448
+[Controller Trainer] Trying strategy: GAT
+[Deploy] Using strategy: GAT on dataset: PROTEINS
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 18.2 K | train
+-------------------------------------------------
+18.2 K    Trainable params
+0         Non-trainable params
+18.2 K    Total params
+0.073     Total estimated model params size (MB)
+9         Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|███████████████████████████████| 14/14 [00:00<00:00, 96.11it/s, v_num=1, val_loss=0.625, val_acc=0.674, train_acc=0.665]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                         
+Epoch 9: 100%|███████████████████████████████| 14/14 [00:00<00:00, 92.83it/s, v_num=1, val_loss=0.625, val_acc=0.674, train_acc=0.665] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 142.34it/s]
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │          0.6875           │
+│         test_loss         │    0.6137676239013672     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on PROTEINS = 0.6875
+[Controller Trainer] Trying strategy: GCN
+[Deploy] Using strategy: GCN on dataset: PROTEINS
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 4.5 K  | train
+-------------------------------------------------
+4.5 K     Trainable params
+0         Non-trainable params
+4.5 K     Total params
+0.018     Total estimated model params size (MB)
+9         Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 134.44it/s, v_num=2, val_loss=0.647, val_acc=0.603, train_acc=0.637]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                         
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 129.41it/s, v_num=2, val_loss=0.647, val_acc=0.603, train_acc=0.637] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 171.50it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │         0.6484375         │
+│         test_loss         │    0.6344383358955383     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on PROTEINS = 0.6484
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: PROTEINS
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 12.9 K | train
+-------------------------------------------------
+12.9 K    Trainable params
+0         Non-trainable params
+12.9 K    Total params
+0.051     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 147.32it/s, v_num=3, val_loss=0.576, val_acc=0.745, train_acc=0.706]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                         
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 139.86it/s, v_num=3, val_loss=0.576, val_acc=0.745, train_acc=0.706] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 176.81it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.6458333730697632     │
+│         test_loss         │    0.6352031230926514     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on PROTEINS = 0.6458
+[Controller Trainer] Trying strategy: GCN
+[Deploy] Using strategy: GCN on dataset: PROTEINS
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 4.5 K  | train
+-------------------------------------------------
+4.5 K     Trainable params
+0         Non-trainable params
+4.5 K     Total params
+0.018     Total estimated model params size (MB)
+9         Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 133.56it/s, v_num=4, val_loss=0.664, val_acc=0.616, train_acc=0.652]`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9: 100%|██████████████████████████████| 14/14 [00:00<00:00, 128.36it/s, v_num=4, val_loss=0.664, val_acc=0.616, train_acc=0.652] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 168.72it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.6744791865348816     │
+│         test_loss         │    0.6476741433143616     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on PROTEINS = 0.6745
+[Controller Trainer] Best strategy for PROTEINS: GIN
+=== Training strategy controller on ENZYMES ===
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 149.26it/s, v_num=5, val_loss=1.710, val_acc=0.233, train_acc=0.277]`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 136.87it/s, v_num=5, val_loss=1.710, val_acc=0.233, train_acc=0.277] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 134.21it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.2666666805744171     │
+│         test_loss         │    1.7300221920013428     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on ENZYMES = 0.2667
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 117.74it/s, v_num=6, val_loss=1.710, val_acc=0.283, train_acc=0.250]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                         
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 108.42it/s, v_num=6, val_loss=1.710, val_acc=0.283, train_acc=0.250] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 176.11it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.28333336114883423    │
+│         test_loss         │     1.733511209487915     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on ENZYMES = 0.2833
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 127.79it/s, v_num=7, val_loss=1.780, val_acc=0.167, train_acc=0.242]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                         
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 112.60it/s, v_num=7, val_loss=1.780, val_acc=0.167, train_acc=0.242] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 151.95it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.28333336114883423    │
+│         test_loss         │    1.7049906253814697     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on ENZYMES = 0.2833
+[Controller Trainer] Trying strategy: GAT
+[Deploy] Using strategy: GAT on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 18.5 K | train
+-------------------------------------------------
+18.5 K    Trainable params
+0         Non-trainable params
+18.5 K    Total params
+0.074     Total estimated model params size (MB)
+9         Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 114.65it/s, v_num=8, val_loss=1.810, val_acc=0.117, train_acc=0.258]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                         
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 105.62it/s, v_num=8, val_loss=1.810, val_acc=0.117, train_acc=0.258] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 117.31it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.23333334922790527    │
+│         test_loss         │    1.7520155906677246     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 137.05it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254]`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 124.33it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 133.30it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 137.05it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254]`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 124.33it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 133.30it/s] 
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 137.05it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254]`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 124.33it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254] 
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Deploy] Final test accuracy on ENZYMES = 0.2333
+[Controller Trainer] Trying strategy: GIN
+[Deploy] Using strategy: GIN on dataset: ENZYMES
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type           | Params | Mode
+-------------------------------------------------
+0 | model | ModuleExecutor | 13.1 K | train
+-------------------------------------------------
+13.1 K    Trainable params
+0         Non-trainable params
+13.1 K    Total params
+0.053     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 137.05it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254]`Trainer.fit` stopped: `max_epochs=10` reached.
+Epoch 9: 100%|████████████████████████████████| 8/8 [00:00<00:00, 124.33it/s, v_num=9, val_loss=1.890, val_acc=0.133, train_acc=0.254] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 133.30it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.30000001192092896    │
+│         test_loss         │    1.7666733264923096     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test accuracy on ENZYMES = 0.3000
+[Controller Trainer] Best strategy for ENZYMES: GIN

@@ -1,0 +1,677 @@
+PS C:\Users\Laplace\Desktop\CompSci\Independent\DP-GNN> python experiments/train_rl_controller.py
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\torch\nn\modules\module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  return t.to(
+========== RL Episode 0 ==========
+[RL] Episode 0 => Sampled actions: {'encoder': 'GCN', 'pooling': 'attention', 'readout': 'linear', 'augment': 'raw', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.001, 'bn': False, 'temperature': 0.5}
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\torch_geometric\deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 5080') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode 
+------------------------------------------------
+0 | model | ComposedModel | 2.3 K  | train
+------------------------------------------------
+2.3 K     Trainable params
+0         Non-trainable params
+2.3 K     Total params
+0.009     Total estimated model params size (MB)
+16        Modules in train mode
+0         Modules in eval mode
+Sanity Checking: |                                                                                                                          | 0/? [00:00<?, ?it/s]C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.
+Sanity Checking DataLoader 0:   0%|                                                                                                         | 0/2 [00:00<?, ?it/s]C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\utilities\data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 2. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 100.37it/s, v_num=51, val_loss=0.671, val_acc=0.603, train_acc=0.591]Metric val_loss improved. New best score: 0.671
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 133.95it/s, v_num=51, val_loss=0.664, val_acc=0.603, train_acc=0.592]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.664
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 129.77it/s, v_num=51, val_loss=0.658, val_acc=0.634, train_acc=0.594]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.658
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 139.24it/s, v_num=51, val_loss=0.652, val_acc=0.642, train_acc=0.597]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.652
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.58it/s, v_num=51, val_loss=0.646, val_acc=0.659, train_acc=0.607]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.646
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 139.78it/s, v_num=51, val_loss=0.641, val_acc=0.667, train_acc=0.629]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.641
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 122.36it/s, v_num=51, val_loss=0.634, val_acc=0.691, train_acc=0.633]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.634
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 128.37it/s, v_num=51, val_loss=0.627, val_acc=0.674, train_acc=0.649]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.627
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 141.64it/s, v_num=51, val_loss=0.623, val_acc=0.707, train_acc=0.646]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.623
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 125.49it/s, v_num=51, val_loss=0.617, val_acc=0.674, train_acc=0.653]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.617
+Epoch 10: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 131.69it/s, v_num=51, val_loss=0.615, val_acc=0.691, train_acc=0.656]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.615
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.19it/s, v_num=51, val_loss=0.610, val_acc=0.674, train_acc=0.662]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.610
+Epoch 13: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 120.88it/s, v_num=51, val_loss=0.607, val_acc=0.674, train_acc=0.683]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.607
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 142.37it/s, v_num=51, val_loss=0.606, val_acc=0.674, train_acc=0.677]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.606
+Epoch 16: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.01it/s, v_num=51, val_loss=0.602, val_acc=0.674, train_acc=0.671]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.602
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 132.57it/s, v_num=51, val_loss=0.597, val_acc=0.715, train_acc=0.702]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.597                                                                                         
+`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 70.30it/s, v_num=51, val_loss=0.597, val_acc=0.715, train_acc=0.702]
+[RL] Episode 0 => val_acc=0.7146, reward=0.7146
+!!! Found new best val_acc = 0.7146 at episode 0
+========== RL Episode 1 ==========
+[RL] Episode 1 => Sampled actions: {'encoder': 'GCN', 'pooling': 'attention', 'readout': 'transformer', 'augment': 'raw', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 140 K  | train
+------------------------------------------------
+140 K     Trainable params
+0         Non-trainable params
+140 K     Total params
+0.560     Total estimated model params size (MB)
+30        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|██████████████████████████████████████████████████████████| 28/28 [00:02<00:00, 13.92it/s, v_num=52, val_loss=0.661, val_acc=0.602, train_acc=0.619]Metric val_loss improved. New best score: 0.661                                                                                                                     
+Epoch 1: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.88it/s, v_num=52, val_loss=0.558, val_acc=0.692, train_acc=0.659]Metric val_loss improved by 0.103 >= min_delta = 0.0. New best score: 0.558                                                                                         
+Epoch 3: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.85it/s, v_num=52, val_loss=0.549, val_acc=0.724, train_acc=0.696]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.549                                                                                         
+Epoch 5: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.06it/s, v_num=52, val_loss=0.522, val_acc=0.755, train_acc=0.703]Metric val_loss improved by 0.027 >= min_delta = 0.0. New best score: 0.522                                                                                         
+Epoch 6: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.60it/s, v_num=52, val_loss=0.506, val_acc=0.761, train_acc=0.724]Metric val_loss improved by 0.016 >= min_delta = 0.0. New best score: 0.506                                                                                         
+Epoch 9: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.93it/s, v_num=52, val_loss=0.524, val_acc=0.739, train_acc=0.708]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.506. Signaling Trainer to stop.                                                      
+Epoch 9: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.69it/s, v_num=52, val_loss=0.524, val_acc=0.739, train_acc=0.708]
+[RL] Episode 1 => val_acc=0.7391, reward=0.7391
+!!! Found new best val_acc = 0.7391 at episode 1
+========== RL Episode 2 ==========
+[RL] Episode 2 => Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'linear', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.0001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 4.8 K  | train
+------------------------------------------------
+4.8 K     Trainable params
+0         Non-trainable params
+4.8 K     Total params
+0.019     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 127.26it/s, v_num=53, val_loss=0.700, val_acc=0.328, train_acc=0.625]Metric val_loss improved. New best score: 0.700                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 127.12it/s, v_num=53, val_loss=0.693, val_acc=0.612, train_acc=0.659]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.693                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 118.63it/s, v_num=53, val_loss=0.638, val_acc=0.756, train_acc=0.671]Metric val_loss improved by 0.055 >= min_delta = 0.0. New best score: 0.638                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.32it/s, v_num=53, val_loss=0.620, val_acc=0.748, train_acc=0.657]Metric val_loss improved by 0.017 >= min_delta = 0.0. New best score: 0.620                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 120.93it/s, v_num=53, val_loss=0.616, val_acc=0.748, train_acc=0.683]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.616                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 125.55it/s, v_num=53, val_loss=0.609, val_acc=0.723, train_acc=0.676]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.609                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.33it/s, v_num=53, val_loss=0.608, val_acc=0.740, train_acc=0.678]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.608                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 142.01it/s, v_num=53, val_loss=0.602, val_acc=0.731, train_acc=0.681]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.602                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.06it/s, v_num=53, val_loss=0.597, val_acc=0.747, train_acc=0.702]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.597                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 132.30it/s, v_num=53, val_loss=0.596, val_acc=0.739, train_acc=0.684]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.596                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 142.96it/s, v_num=53, val_loss=0.593, val_acc=0.739, train_acc=0.696]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.593                                                                                         
+Epoch 13: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 135.66it/s, v_num=53, val_loss=0.586, val_acc=0.723, train_acc=0.696]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.586                                                                                         
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.98it/s, v_num=53, val_loss=0.582, val_acc=0.731, train_acc=0.687]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.582                                                                                         
+Epoch 17: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 132.08it/s, v_num=53, val_loss=0.581, val_acc=0.755, train_acc=0.690]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.581                                                                                         
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 138.00it/s, v_num=53, val_loss=0.578, val_acc=0.747, train_acc=0.695]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.578                                                                                         
+`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 86.35it/s, v_num=53, val_loss=0.578, val_acc=0.747, train_acc=0.695]
+[RL] Episode 2 => val_acc=0.7469, reward=0.7469
+!!! Found new best val_acc = 0.7469 at episode 2
+========== RL Episode 3 ==========
+[RL] Episode 3 => Sampled actions: {'encoder': 'GAT', 'pooling': 'attention', 'readout': 'linear', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.0001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 10.2 K | train
+------------------------------------------------
+10.2 K    Trainable params
+0         Non-trainable params
+10.2 K    Total params
+0.041     Total estimated model params size (MB)
+18        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 111.19it/s, v_num=54, val_loss=0.691, val_acc=0.636, train_acc=0.605]Metric val_loss improved. New best score: 0.691                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 106.67it/s, v_num=54, val_loss=0.684, val_acc=0.636, train_acc=0.610]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.684                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 114.47it/s, v_num=54, val_loss=0.665, val_acc=0.636, train_acc=0.629]Metric val_loss improved by 0.019 >= min_delta = 0.0. New best score: 0.665                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 120.47it/s, v_num=54, val_loss=0.653, val_acc=0.645, train_acc=0.646]Metric val_loss improved by 0.012 >= min_delta = 0.0. New best score: 0.653                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 118.75it/s, v_num=54, val_loss=0.651, val_acc=0.652, train_acc=0.651]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.651                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 119.72it/s, v_num=54, val_loss=0.647, val_acc=0.644, train_acc=0.652]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.647                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 120.69it/s, v_num=54, val_loss=0.647, val_acc=0.669, train_acc=0.658]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.647                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 120.32it/s, v_num=54, val_loss=0.642, val_acc=0.652, train_acc=0.664]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.642                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 115.01it/s, v_num=54, val_loss=0.640, val_acc=0.636, train_acc=0.658]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.640                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 117.01it/s, v_num=54, val_loss=0.638, val_acc=0.644, train_acc=0.661]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.638                                                                                         
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 111.39it/s, v_num=54, val_loss=0.642, val_acc=0.644, train_acc=0.663]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.638. Signaling Trainer to stop.                                                      
+Epoch 15: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 75.76it/s, v_num=54, val_loss=0.642, val_acc=0.644, train_acc=0.663]
+[RL] Episode 3 => val_acc=0.6443, reward=0.6443
+========== RL Episode 4 ==========
+[RL] Episode 4 => Sampled actions: {'encoder': 'GAT', 'pooling': 'max', 'readout': 'transformer', 'augment': 'virtual', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.001, 'bn': False, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 139 K  | train
+------------------------------------------------
+139 K     Trainable params
+0         Non-trainable params
+139 K     Total params
+0.558     Total estimated model params size (MB)
+22        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.34it/s, v_num=55, val_loss=0.669, val_acc=0.573, train_acc=0.532]Metric val_loss improved. New best score: 0.669                                                                                                                     
+Epoch 1: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.27it/s, v_num=55, val_loss=0.562, val_acc=0.755, train_acc=0.678]Metric val_loss improved by 0.107 >= min_delta = 0.0. New best score: 0.562                                                                                         
+Epoch 4: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.90it/s, v_num=55, val_loss=0.585, val_acc=0.716, train_acc=0.697]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.562. Signaling Trainer to stop.                                                      
+Epoch 4: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.78it/s, v_num=55, val_loss=0.585, val_acc=0.716, train_acc=0.697]
+[RL] Episode 4 => val_acc=0.7156, reward=0.7156
+========== RL Episode 5 ==========
+[RL] Episode 5 => Sampled actions: {'encoder': 'GCN', 'pooling': 'attention', 'readout': 'mlp', 'augment': 'virtual', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 3.5 K  | train
+------------------------------------------------
+3.5 K     Trainable params
+0         Non-trainable params
+3.5 K     Total params
+0.014     Total estimated model params size (MB)
+21        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 139.35it/s, v_num=56, val_loss=0.691, val_acc=0.563, train_acc=0.638]Metric val_loss improved. New best score: 0.691                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.38it/s, v_num=56, val_loss=0.666, val_acc=0.634, train_acc=0.705]Metric val_loss improved by 0.025 >= min_delta = 0.0. New best score: 0.666                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 135.08it/s, v_num=56, val_loss=0.640, val_acc=0.730, train_acc=0.727]Metric val_loss improved by 0.026 >= min_delta = 0.0. New best score: 0.640                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 116.52it/s, v_num=56, val_loss=0.636, val_acc=0.706, train_acc=0.713]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.636                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 142.46it/s, v_num=56, val_loss=0.628, val_acc=0.697, train_acc=0.706]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.628                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.84it/s, v_num=56, val_loss=0.627, val_acc=0.705, train_acc=0.709]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.627                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 123.71it/s, v_num=56, val_loss=0.622, val_acc=0.697, train_acc=0.726]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.622                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 142.11it/s, v_num=56, val_loss=0.619, val_acc=0.697, train_acc=0.726]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.619                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 135.89it/s, v_num=56, val_loss=0.610, val_acc=0.681, train_acc=0.719]Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.610                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 139.59it/s, v_num=56, val_loss=0.600, val_acc=0.721, train_acc=0.719]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.600                                                                                         
+Epoch 14: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 141.68it/s, v_num=56, val_loss=0.608, val_acc=0.697, train_acc=0.733]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.600. Signaling Trainer to stop.                                                      
+Epoch 14: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 88.22it/s, v_num=56, val_loss=0.608, val_acc=0.697, train_acc=0.733]
+[RL] Episode 5 => val_acc=0.6969, reward=0.6969
+========== RL Episode 6 ==========
+[RL] Episode 6 => Sampled actions: {'encoder': 'GAT', 'pooling': 'attention', 'readout': 'linear', 'augment': 'spectral', 'hidden_dim': 32, 'dropout': 0.0, 'lr': 0.001, 'bn': False, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 2.9 K  | train
+------------------------------------------------
+2.9 K     Trainable params
+0         Non-trainable params
+2.9 K     Total params
+0.012     Total estimated model params size (MB)
+16        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 124.32it/s, v_num=57, val_loss=0.656, val_acc=0.643, train_acc=0.602]Metric val_loss improved. New best score: 0.656                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 117.04it/s, v_num=57, val_loss=0.653, val_acc=0.643, train_acc=0.603]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.653                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 119.77it/s, v_num=57, val_loss=0.648, val_acc=0.643, train_acc=0.603]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.648                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 125.27it/s, v_num=57, val_loss=0.643, val_acc=0.643, train_acc=0.601]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.643                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 127.09it/s, v_num=57, val_loss=0.636, val_acc=0.659, train_acc=0.611]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.636                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.45it/s, v_num=57, val_loss=0.626, val_acc=0.699, train_acc=0.622]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.626                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.67it/s, v_num=57, val_loss=0.611, val_acc=0.731, train_acc=0.641]Metric val_loss improved by 0.016 >= min_delta = 0.0. New best score: 0.611                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 127.00it/s, v_num=57, val_loss=0.594, val_acc=0.740, train_acc=0.661]Metric val_loss improved by 0.016 >= min_delta = 0.0. New best score: 0.594                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 129.04it/s, v_num=57, val_loss=0.588, val_acc=0.740, train_acc=0.673]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.588                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.24it/s, v_num=57, val_loss=0.584, val_acc=0.732, train_acc=0.673]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.584                                                                                         
+Epoch 10: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 119.72it/s, v_num=57, val_loss=0.578, val_acc=0.732, train_acc=0.675]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.578                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.60it/s, v_num=57, val_loss=0.576, val_acc=0.732, train_acc=0.673]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.576                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.79it/s, v_num=57, val_loss=0.570, val_acc=0.716, train_acc=0.673]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.570                                                                                         
+Epoch 13: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 120.34it/s, v_num=57, val_loss=0.564, val_acc=0.771, train_acc=0.670]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.564                                                                                         
+Epoch 14: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 123.61it/s, v_num=57, val_loss=0.553, val_acc=0.796, train_acc=0.692]Metric val_loss improved by 0.011 >= min_delta = 0.0. New best score: 0.553                                                                                         
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 121.58it/s, v_num=57, val_loss=0.549, val_acc=0.755, train_acc=0.722]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.549                                                                                         
+Epoch 16: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 123.06it/s, v_num=57, val_loss=0.528, val_acc=0.771, train_acc=0.722]Metric val_loss improved by 0.021 >= min_delta = 0.0. New best score: 0.528                                                                                         
+Epoch 17: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.81it/s, v_num=57, val_loss=0.518, val_acc=0.771, train_acc=0.732]Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.518                                                                                         
+Epoch 18: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 133.83it/s, v_num=57, val_loss=0.508, val_acc=0.796, train_acc=0.734]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.508                                                                                         
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.13it/s, v_num=57, val_loss=0.517, val_acc=0.763, train_acc=0.734]`Trainer.fit` stopped: `max_epochs=20` reached.                                                                                                                     
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 81.80it/s, v_num=57, val_loss=0.517, val_acc=0.763, train_acc=0.734]
+[RL] Episode 6 => val_acc=0.7625, reward=0.7625
+!!! Found new best val_acc = 0.7625 at episode 6
+========== RL Episode 7 ==========
+[RL] Episode 7 => Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'mlp', 'augment': 'raw', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.0001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 9.0 K  | train
+------------------------------------------------
+9.0 K     Trainable params
+0         Non-trainable params
+9.0 K     Total params
+0.036     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 147.06it/s, v_num=58, val_loss=0.718, val_acc=0.365, train_acc=0.390]Metric val_loss improved. New best score: 0.718                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 152.36it/s, v_num=58, val_loss=0.706, val_acc=0.381, train_acc=0.396]Metric val_loss improved by 0.012 >= min_delta = 0.0. New best score: 0.706                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.94it/s, v_num=58, val_loss=0.684, val_acc=0.585, train_acc=0.456]Metric val_loss improved by 0.022 >= min_delta = 0.0. New best score: 0.684                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 145.13it/s, v_num=58, val_loss=0.677, val_acc=0.650, train_acc=0.573]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.677                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 147.91it/s, v_num=58, val_loss=0.667, val_acc=0.691, train_acc=0.648]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.667                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 145.82it/s, v_num=58, val_loss=0.659, val_acc=0.691, train_acc=0.685]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.659                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 144.85it/s, v_num=58, val_loss=0.653, val_acc=0.699, train_acc=0.685]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.653                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.14it/s, v_num=58, val_loss=0.643, val_acc=0.699, train_acc=0.693]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.643                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.80it/s, v_num=58, val_loss=0.639, val_acc=0.699, train_acc=0.701]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.639                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 148.59it/s, v_num=58, val_loss=0.631, val_acc=0.707, train_acc=0.687]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.631                                                                                         
+Epoch 10: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 149.31it/s, v_num=58, val_loss=0.626, val_acc=0.699, train_acc=0.694]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.626                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 153.12it/s, v_num=58, val_loss=0.624, val_acc=0.691, train_acc=0.705]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.624                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 142.06it/s, v_num=58, val_loss=0.623, val_acc=0.691, train_acc=0.697]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.623                                                                                         
+Epoch 13: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.91it/s, v_num=58, val_loss=0.619, val_acc=0.683, train_acc=0.701]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.619                                                                                         
+Epoch 14: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 143.11it/s, v_num=58, val_loss=0.610, val_acc=0.676, train_acc=0.693]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.610                                                                                         
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 146.92it/s, v_num=58, val_loss=0.605, val_acc=0.683, train_acc=0.711]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.605                                                                                         
+Epoch 17: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.84it/s, v_num=58, val_loss=0.598, val_acc=0.722, train_acc=0.711]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.598                                                                                         
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 152.49it/s, v_num=58, val_loss=0.601, val_acc=0.715, train_acc=0.712]`Trainer.fit` stopped: `max_epochs=20` reached.                                                                                                                     
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 91.85it/s, v_num=58, val_loss=0.601, val_acc=0.715, train_acc=0.712]
+[RL] Episode 7 => val_acc=0.7146, reward=0.7146
+========== RL Episode 8 ==========
+[RL] Episode 8 => Sampled actions: {'encoder': 'GraphSAGE', 'pooling': 'mean', 'readout': 'transformer', 'augment': 'virtual', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.0001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 290 K  | train
+------------------------------------------------
+290 K     Trainable params
+0         Non-trainable params
+290 K     Total params
+1.161     Total estimated model params size (MB)
+26        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.89it/s, v_num=59, val_loss=0.679, val_acc=0.613, train_acc=0.636]Metric val_loss improved. New best score: 0.679                                                                                                                     
+Epoch 1: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.39it/s, v_num=59, val_loss=0.574, val_acc=0.738, train_acc=0.669]Metric val_loss improved by 0.106 >= min_delta = 0.0. New best score: 0.574                                                                                         
+Epoch 2: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.54it/s, v_num=59, val_loss=0.558, val_acc=0.730, train_acc=0.704]Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.558                                                                                         
+Epoch 4: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.62it/s, v_num=59, val_loss=0.546, val_acc=0.682, train_acc=0.726]Metric val_loss improved by 0.012 >= min_delta = 0.0. New best score: 0.546                                                                                         
+Epoch 7: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.35it/s, v_num=59, val_loss=0.555, val_acc=0.729, train_acc=0.742]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.546. Signaling Trainer to stop.                                                      
+Epoch 7: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.17it/s, v_num=59, val_loss=0.555, val_acc=0.729, train_acc=0.742]
+[RL] Episode 8 => val_acc=0.7292, reward=0.7292
+========== RL Episode 9 ==========
+[RL] Episode 9 => Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'mlp', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 9.0 K  | train
+------------------------------------------------
+9.0 K     Trainable params
+0         Non-trainable params
+9.0 K     Total params
+0.036     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.96it/s, v_num=60, val_loss=0.684, val_acc=0.571, train_acc=0.664]Metric val_loss improved. New best score: 0.684                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 135.00it/s, v_num=60, val_loss=0.638, val_acc=0.643, train_acc=0.682]Metric val_loss improved by 0.046 >= min_delta = 0.0. New best score: 0.638                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.28it/s, v_num=60, val_loss=0.578, val_acc=0.716, train_acc=0.684]Metric val_loss improved by 0.060 >= min_delta = 0.0. New best score: 0.578                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.88it/s, v_num=60, val_loss=0.568, val_acc=0.739, train_acc=0.715]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.568                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.16it/s, v_num=60, val_loss=0.552, val_acc=0.731, train_acc=0.706]Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.552                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 119.23it/s, v_num=60, val_loss=0.548, val_acc=0.731, train_acc=0.731]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.548                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 133.79it/s, v_num=60, val_loss=0.537, val_acc=0.748, train_acc=0.694]Metric val_loss improved by 0.011 >= min_delta = 0.0. New best score: 0.537                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 118.22it/s, v_num=60, val_loss=0.529, val_acc=0.756, train_acc=0.715]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.529                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 121.49it/s, v_num=60, val_loss=0.514, val_acc=0.731, train_acc=0.710]Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.514                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 143.17it/s, v_num=60, val_loss=0.505, val_acc=0.755, train_acc=0.728]Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.505                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 148.51it/s, v_num=60, val_loss=0.499, val_acc=0.731, train_acc=0.728]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.499                                                                                         
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 142.88it/s, v_num=60, val_loss=0.490, val_acc=0.765, train_acc=0.713]Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.490                                                                                         
+Epoch 16: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 135.05it/s, v_num=60, val_loss=0.488, val_acc=0.764, train_acc=0.736]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.488                                                                                         
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.74it/s, v_num=60, val_loss=0.492, val_acc=0.804, train_acc=0.733]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.488. Signaling Trainer to stop.                                                      
+`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 85.20it/s, v_num=60, val_loss=0.492, val_acc=0.804, train_acc=0.733]
+[RL] Episode 9 => val_acc=0.8036, reward=0.8036
+!!! Found new best val_acc = 0.8036 at episode 9
+========== RL Episode 10 ==========
+[RL] Episode 10 => Sampled actions: {'encoder': 'GAT', 'pooling': 'attention', 'readout': 'mlp', 'augment': 'virtual', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.0001, 'bn': False, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 14.1 K | train
+------------------------------------------------
+14.1 K    Trainable params
+0         Non-trainable params
+14.1 K    Total params
+0.057     Total estimated model params size (MB)
+19        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 107.30it/s, v_num=61, val_loss=0.689, val_acc=0.556, train_acc=0.599]Metric val_loss improved. New best score: 0.689                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 103.91it/s, v_num=61, val_loss=0.688, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.688                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 112.75it/s, v_num=61, val_loss=0.687, val_acc=0.556, train_acc=0.598]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.687                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 108.24it/s, v_num=61, val_loss=0.686, val_acc=0.556, train_acc=0.598]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.686                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 107.65it/s, v_num=61, val_loss=0.686, val_acc=0.556, train_acc=0.598]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.686                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 112.36it/s, v_num=61, val_loss=0.686, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.686                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 119.37it/s, v_num=61, val_loss=0.685, val_acc=0.556, train_acc=0.598]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.685                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 106.21it/s, v_num=61, val_loss=0.685, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.685                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 100.73it/s, v_num=61, val_loss=0.685, val_acc=0.556, train_acc=0.598]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.685                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 110.81it/s, v_num=61, val_loss=0.685, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.685                                                                                         
+Epoch 10: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 111.18it/s, v_num=61, val_loss=0.684, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.684                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 114.52it/s, v_num=61, val_loss=0.683, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.683                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 118.45it/s, v_num=61, val_loss=0.682, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.682                                                                                         
+Epoch 13: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 115.47it/s, v_num=61, val_loss=0.680, val_acc=0.556, train_acc=0.599]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.680                                                                                         
+Epoch 14: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 114.84it/s, v_num=61, val_loss=0.679, val_acc=0.556, train_acc=0.598]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.679                                                                                         
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 122.84it/s, v_num=61, val_loss=0.676, val_acc=0.572, train_acc=0.601]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.676                                                                                         
+Epoch 16: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 122.96it/s, v_num=61, val_loss=0.673, val_acc=0.572, train_acc=0.613]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.673                                                                                         
+Epoch 17: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 123.14it/s, v_num=61, val_loss=0.671, val_acc=0.596, train_acc=0.624]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.671                                                                                         
+Epoch 18: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 123.61it/s, v_num=61, val_loss=0.666, val_acc=0.613, train_acc=0.632]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.666                                                                                         
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 123.31it/s, v_num=61, val_loss=0.663, val_acc=0.621, train_acc=0.644]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.663                                                                                         
+`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 79.61it/s, v_num=61, val_loss=0.663, val_acc=0.621, train_acc=0.644]
+[RL] Episode 10 => val_acc=0.6208, reward=0.6208
+========== RL Episode 11 ==========
+[RL] Episode 11 => Sampled actions: {'encoder': 'GCN', 'pooling': 'max', 'readout': 'mlp', 'augment': 'spectral', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 2.4 K  | train
+------------------------------------------------
+2.4 K     Trainable params
+0         Non-trainable params
+2.4 K     Total params
+0.010     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 148.72it/s, v_num=62, val_loss=0.690, val_acc=0.546, train_acc=0.622]Metric val_loss improved. New best score: 0.690                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 153.15it/s, v_num=62, val_loss=0.658, val_acc=0.659, train_acc=0.698]Metric val_loss improved by 0.032 >= min_delta = 0.0. New best score: 0.658                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 148.88it/s, v_num=62, val_loss=0.642, val_acc=0.641, train_acc=0.734]Metric val_loss improved by 0.016 >= min_delta = 0.0. New best score: 0.642                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 146.74it/s, v_num=62, val_loss=0.627, val_acc=0.690, train_acc=0.743]Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.627                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 152.07it/s, v_num=62, val_loss=0.622, val_acc=0.690, train_acc=0.760]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.622                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 129.05it/s, v_num=62, val_loss=0.617, val_acc=0.706, train_acc=0.727]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.617                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 143.67it/s, v_num=62, val_loss=0.603, val_acc=0.697, train_acc=0.743]Metric val_loss improved by 0.014 >= min_delta = 0.0. New best score: 0.603                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 147.15it/s, v_num=62, val_loss=0.600, val_acc=0.689, train_acc=0.744]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.600                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 146.29it/s, v_num=62, val_loss=0.596, val_acc=0.721, train_acc=0.749]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.596                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 144.15it/s, v_num=62, val_loss=0.604, val_acc=0.698, train_acc=0.752]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.596. Signaling Trainer to stop.                                                      
+Epoch 12: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 84.58it/s, v_num=62, val_loss=0.604, val_acc=0.698, train_acc=0.752]
+[RL] Episode 11 => val_acc=0.6979, reward=0.6979
+========== RL Episode 12 ==========
+[RL] Episode 12 => Sampled actions: {'encoder': 'GAT', 'pooling': 'mean', 'readout': 'linear', 'augment': 'raw', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 6.0 K  | train
+------------------------------------------------
+6.0 K     Trainable params
+0         Non-trainable params
+6.0 K     Total params
+0.024     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 124.50it/s, v_num=63, val_loss=0.686, val_acc=0.602, train_acc=0.588]Metric val_loss improved. New best score: 0.686                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 128.40it/s, v_num=63, val_loss=0.679, val_acc=0.650, train_acc=0.661]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.679                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.93it/s, v_num=63, val_loss=0.634, val_acc=0.721, train_acc=0.665]Metric val_loss improved by 0.045 >= min_delta = 0.0. New best score: 0.634                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 111.15it/s, v_num=63, val_loss=0.619, val_acc=0.658, train_acc=0.678]Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.619                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 129.15it/s, v_num=63, val_loss=0.614, val_acc=0.674, train_acc=0.698]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.614                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 122.59it/s, v_num=63, val_loss=0.591, val_acc=0.721, train_acc=0.683]Metric val_loss improved by 0.024 >= min_delta = 0.0. New best score: 0.591                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 110.49it/s, v_num=63, val_loss=0.588, val_acc=0.745, train_acc=0.682]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.588                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.77it/s, v_num=63, val_loss=0.586, val_acc=0.712, train_acc=0.690]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.586                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 133.51it/s, v_num=63, val_loss=0.585, val_acc=0.712, train_acc=0.681]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.585                                                                                         
+Epoch 10: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 132.38it/s, v_num=63, val_loss=0.585, val_acc=0.729, train_acc=0.687]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.585                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.06it/s, v_num=63, val_loss=0.576, val_acc=0.760, train_acc=0.696]Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.576                                                                                         
+Epoch 14: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 131.96it/s, v_num=63, val_loss=0.598, val_acc=0.698, train_acc=0.707]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.576. Signaling Trainer to stop.                                                      
+Epoch 14: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 84.10it/s, v_num=63, val_loss=0.598, val_acc=0.698, train_acc=0.707]
+[RL] Episode 12 => val_acc=0.6979, reward=0.6979
+========== RL Episode 13 ==========
+[RL] Episode 13 => Sampled actions: {'encoder': 'GAT', 'pooling': 'max', 'readout': 'linear', 'augment': 'virtual', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.0001, 'bn': False, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 5.8 K  | train
+------------------------------------------------
+5.8 K     Trainable params
+0         Non-trainable params
+5.8 K     Total params
+0.023     Total estimated model params size (MB)
+10        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 138.85it/s, v_num=64, val_loss=0.684, val_acc=0.580, train_acc=0.590]Metric val_loss improved. New best score: 0.684                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.68it/s, v_num=64, val_loss=0.682, val_acc=0.580, train_acc=0.590]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.682                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 107.19it/s, v_num=64, val_loss=0.680, val_acc=0.580, train_acc=0.591]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.680                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 128.28it/s, v_num=64, val_loss=0.678, val_acc=0.580, train_acc=0.591]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.678                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 136.75it/s, v_num=64, val_loss=0.677, val_acc=0.580, train_acc=0.591]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.677                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 136.35it/s, v_num=64, val_loss=0.676, val_acc=0.580, train_acc=0.589]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.676                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.92it/s, v_num=64, val_loss=0.675, val_acc=0.580, train_acc=0.590]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.675                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.05it/s, v_num=64, val_loss=0.674, val_acc=0.580, train_acc=0.590]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.674                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.00it/s, v_num=64, val_loss=0.674, val_acc=0.580, train_acc=0.591]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.674                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.97it/s, v_num=64, val_loss=0.674, val_acc=0.580, train_acc=0.589]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.674                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 139.99it/s, v_num=64, val_loss=0.673, val_acc=0.580, train_acc=0.590]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.673                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.86it/s, v_num=64, val_loss=0.673, val_acc=0.580, train_acc=0.590]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.673                                                                                         
+Epoch 13: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 143.18it/s, v_num=64, val_loss=0.673, val_acc=0.580, train_acc=0.590]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.673                                                                                         
+Epoch 16: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 135.31it/s, v_num=64, val_loss=0.673, val_acc=0.580, train_acc=0.588]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.673                                                                                         
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.03it/s, v_num=64, val_loss=0.674, val_acc=0.580, train_acc=0.589]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.673. Signaling Trainer to stop.                                                      
+`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 85.59it/s, v_num=64, val_loss=0.674, val_acc=0.580, train_acc=0.589]
+[RL] Episode 13 => val_acc=0.5797, reward=0.5797
+========== RL Episode 14 ==========
+[RL] Episode 14 => Sampled actions: {'encoder': 'GAT', 'pooling': 'max', 'readout': 'linear', 'augment': 'virtual', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 6.0 K  | train
+------------------------------------------------
+6.0 K     Trainable params
+0         Non-trainable params
+6.0 K     Total params
+0.024     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 126.45it/s, v_num=65, val_loss=0.695, val_acc=0.466, train_acc=0.612]Metric val_loss improved. New best score: 0.695                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 125.63it/s, v_num=65, val_loss=0.685, val_acc=0.548, train_acc=0.605]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.685                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 123.72it/s, v_num=65, val_loss=0.663, val_acc=0.574, train_acc=0.623]Metric val_loss improved by 0.021 >= min_delta = 0.0. New best score: 0.663                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 121.55it/s, v_num=65, val_loss=0.662, val_acc=0.602, train_acc=0.656]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.662                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 127.74it/s, v_num=65, val_loss=0.621, val_acc=0.754, train_acc=0.673]Metric val_loss improved by 0.041 >= min_delta = 0.0. New best score: 0.621                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 108.74it/s, v_num=65, val_loss=0.624, val_acc=0.673, train_acc=0.699]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.621. Signaling Trainer to stop.                                                      
+Epoch 9: 100%|██████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 68.86it/s, v_num=65, val_loss=0.624, val_acc=0.673, train_acc=0.699]
+[RL] Episode 14 => val_acc=0.6734, reward=0.6734
+========== RL Episode 15 ==========
+[RL] Episode 15 => Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'linear', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.0001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 4.8 K  | train
+------------------------------------------------
+4.8 K     Trainable params
+0         Non-trainable params
+4.8 K     Total params
+0.019     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 141.60it/s, v_num=66, val_loss=0.695, val_acc=0.556, train_acc=0.598]Metric val_loss improved. New best score: 0.695                                                                                                                     
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 145.32it/s, v_num=66, val_loss=0.679, val_acc=0.586, train_acc=0.627]Metric val_loss improved by 0.016 >= min_delta = 0.0. New best score: 0.679                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 144.07it/s, v_num=66, val_loss=0.654, val_acc=0.602, train_acc=0.657]Metric val_loss improved by 0.026 >= min_delta = 0.0. New best score: 0.654                                                                                         
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.31it/s, v_num=66, val_loss=0.648, val_acc=0.610, train_acc=0.651]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.648                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 150.56it/s, v_num=66, val_loss=0.643, val_acc=0.633, train_acc=0.650]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.643                                                                                         
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 147.65it/s, v_num=66, val_loss=0.639, val_acc=0.641, train_acc=0.653]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.639                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 155.48it/s, v_num=66, val_loss=0.633, val_acc=0.697, train_acc=0.685]Metric val_loss improved by 0.007 >= min_delta = 0.0. New best score: 0.633                                                                                         
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 158.72it/s, v_num=66, val_loss=0.629, val_acc=0.712, train_acc=0.660]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.629                                                                                         
+Epoch 10: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 157.80it/s, v_num=66, val_loss=0.626, val_acc=0.705, train_acc=0.677]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.626                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 158.65it/s, v_num=66, val_loss=0.625, val_acc=0.714, train_acc=0.678]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.625                                                                                         
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 139.19it/s, v_num=66, val_loss=0.625, val_acc=0.697, train_acc=0.669]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.625                                                                                         
+Epoch 14: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 148.40it/s, v_num=66, val_loss=0.625, val_acc=0.680, train_acc=0.692]Metric val_loss improved by 0.000 >= min_delta = 0.0. New best score: 0.625                                                                                         
+Epoch 16: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 154.27it/s, v_num=66, val_loss=0.619, val_acc=0.697, train_acc=0.675]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.619                                                                                         
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 146.65it/s, v_num=66, val_loss=0.617, val_acc=0.696, train_acc=0.689]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.617                                                                                         
+`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 90.30it/s, v_num=66, val_loss=0.617, val_acc=0.696, train_acc=0.689]
+[RL] Episode 15 => val_acc=0.6958, reward=0.6958
+========== RL Episode 16 ==========
+[RL] Episode 16 => Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'linear', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 4.8 K  | train
+------------------------------------------------
+4.8 K     Trainable params
+0         Non-trainable params
+4.8 K     Total params
+0.019     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 138.37it/s, v_num=67, val_loss=0.674, val_acc=0.690, train_acc=0.629]Metric val_loss improved. New best score: 0.674                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 143.27it/s, v_num=67, val_loss=0.644, val_acc=0.690, train_acc=0.670]Metric val_loss improved by 0.029 >= min_delta = 0.0. New best score: 0.644                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 152.05it/s, v_num=67, val_loss=0.609, val_acc=0.699, train_acc=0.674]Metric val_loss improved by 0.036 >= min_delta = 0.0. New best score: 0.609                                                                                         
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 130.32it/s, v_num=67, val_loss=0.594, val_acc=0.755, train_acc=0.666]Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.594                                                                                         
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 158.15it/s, v_num=67, val_loss=0.591, val_acc=0.755, train_acc=0.693]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.591                                                                                         
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 149.86it/s, v_num=67, val_loss=0.588, val_acc=0.738, train_acc=0.687]Metric val_loss improved by 0.003 >= min_delta = 0.0. New best score: 0.588                                                                                         
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 151.52it/s, v_num=67, val_loss=0.583, val_acc=0.747, train_acc=0.695]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.583                                                                                         
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 156.49it/s, v_num=67, val_loss=0.590, val_acc=0.730, train_acc=0.690]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.583. Signaling Trainer to stop.                                                      
+Epoch 11: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 94.03it/s, v_num=67, val_loss=0.590, val_acc=0.730, train_acc=0.690]
+[RL] Episode 16 => val_acc=0.7302, reward=0.7302
+========== RL Episode 17 ==========
+[RL] Episode 17 => Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'transformer', 'augment': 'raw', 'hidden_dim': 32, 'dropout': 0.0, 'lr': 0.0001, 'bn': False, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 138 K  | train
+------------------------------------------------
+138 K     Trainable params
+0         Non-trainable params
+138 K     Total params
+0.555     Total estimated model params size (MB)
+22        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.44it/s, v_num=68, val_loss=0.652, val_acc=0.590, train_acc=0.615]Metric val_loss improved. New best score: 0.652                                                                                                                     
+Epoch 1: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.28it/s, v_num=68, val_loss=0.609, val_acc=0.654, train_acc=0.644]Metric val_loss improved by 0.043 >= min_delta = 0.0. New best score: 0.609                                                                                         
+Epoch 2: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.18it/s, v_num=68, val_loss=0.585, val_acc=0.710, train_acc=0.684]Metric val_loss improved by 0.024 >= min_delta = 0.0. New best score: 0.585                                                                                         
+Epoch 3: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.25it/s, v_num=68, val_loss=0.578, val_acc=0.724, train_acc=0.692]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.578                                                                                         
+Epoch 4: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.07it/s, v_num=68, val_loss=0.574, val_acc=0.732, train_acc=0.713]Metric val_loss improved by 0.004 >= min_delta = 0.0. New best score: 0.574                                                                                         
+Epoch 6: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 17.03it/s, v_num=68, val_loss=0.573, val_acc=0.724, train_acc=0.707]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.573                                                                                         
+Epoch 8: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.31it/s, v_num=68, val_loss=0.571, val_acc=0.708, train_acc=0.706]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.571                                                                                         
+Epoch 9: 100%|██████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.68it/s, v_num=68, val_loss=0.563, val_acc=0.708, train_acc=0.688]Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.563                                                                                         
+Epoch 12: 100%|█████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 15.84it/s, v_num=68, val_loss=0.566, val_acc=0.717, train_acc=0.727]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.563. Signaling Trainer to stop.                                                      
+Epoch 12: 100%|█████████████████████████████████████████████████████████| 28/28 [00:02<00:00, 13.69it/s, v_num=68, val_loss=0.566, val_acc=0.717, train_acc=0.727]
+[RL] Episode 17 => val_acc=0.7167, reward=0.7167
+========== RL Episode 18 ==========
+[RL] Episode 18 => Sampled actions: {'encoder': 'GAT', 'pooling': 'mean', 'readout': 'mlp', 'augment': 'spectral', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.001, 'bn': False, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 2.9 K  | train
+------------------------------------------------
+2.9 K     Trainable params
+0         Non-trainable params
+2.9 K     Total params
+0.012     Total estimated model params size (MB)
+13        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 114.82it/s, v_num=69, val_loss=0.686, val_acc=0.572, train_acc=0.499]Metric val_loss improved. New best score: 0.686                                                                                                                     
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 119.69it/s, v_num=69, val_loss=0.678, val_acc=0.572, train_acc=0.598]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.678                                                                                         
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 104.71it/s, v_num=69, val_loss=0.672, val_acc=0.572, train_acc=0.599]Metric val_loss improved by 0.006 >= min_delta = 0.0. New best score: 0.672
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 119.39it/s, v_num=69, val_loss=0.657, val_acc=0.603, train_acc=0.604]Metric val_loss improved by 0.015 >= min_delta = 0.0. New best score: 0.657
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 118.94it/s, v_num=69, val_loss=0.649, val_acc=0.628, train_acc=0.639]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.649
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 113.60it/s, v_num=69, val_loss=0.630, val_acc=0.642, train_acc=0.646]Metric val_loss improved by 0.019 >= min_delta = 0.0. New best score: 0.630
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 121.22it/s, v_num=69, val_loss=0.626, val_acc=0.690, train_acc=0.672]Metric val_loss improved by 0.005 >= min_delta = 0.0. New best score: 0.626
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.25it/s, v_num=69, val_loss=0.602, val_acc=0.689, train_acc=0.677]Metric val_loss improved by 0.024 >= min_delta = 0.0. New best score: 0.602
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.01it/s, v_num=69, val_loss=0.594, val_acc=0.714, train_acc=0.705]Metric val_loss improved by 0.009 >= min_delta = 0.0. New best score: 0.594
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 132.05it/s, v_num=69, val_loss=0.586, val_acc=0.746, train_acc=0.697]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.586
+Epoch 11: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.86it/s, v_num=69, val_loss=0.585, val_acc=0.706, train_acc=0.705]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.585
+Epoch 12: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.21it/s, v_num=69, val_loss=0.584, val_acc=0.706, train_acc=0.707]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.584
+Epoch 14: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 137.30it/s, v_num=69, val_loss=0.576, val_acc=0.746, train_acc=0.708]Metric val_loss improved by 0.008 >= min_delta = 0.0. New best score: 0.576
+Epoch 15: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 117.55it/s, v_num=69, val_loss=0.575, val_acc=0.746, train_acc=0.711]Metric val_loss improved by 0.001 >= min_delta = 0.0. New best score: 0.575
+Epoch 18: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 133.61it/s, v_num=69, val_loss=0.574, val_acc=0.746, train_acc=0.713]Metric val_loss improved by 0.002 >= min_delta = 0.0. New best score: 0.574
+Epoch 19: 100%|████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 139.99it/s, v_num=69, val_loss=0.575, val_acc=0.746, train_acc=0.716]`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 87.46it/s, v_num=69, val_loss=0.575, val_acc=0.746, train_acc=0.716] 
+[RL] Episode 18 => val_acc=0.7458, reward=0.7458
+========== RL Episode 19 ==========
+[RL] Episode 19 => Sampled actions: {'encoder': 'GAT', 'pooling': 'mean', 'readout': 'linear', 'augment': 'raw', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 2.0 K  | train
+------------------------------------------------
+2.0 K     Trainable params
+0         Non-trainable params
+2.0 K     Total params
+0.008     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 0: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 127.97it/s, v_num=70, val_loss=0.687, val_acc=0.583, train_acc=0.640]Metric val_loss improved. New best score: 0.687
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 120.92it/s, v_num=70, val_loss=0.675, val_acc=0.591, train_acc=0.662]Metric val_loss improved by 0.012 >= min_delta = 0.0. New best score: 0.675
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 131.37it/s, v_num=70, val_loss=0.634, val_acc=0.692, train_acc=0.651]Metric val_loss improved by 0.041 >= min_delta = 0.0. New best score: 0.634
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 131.73it/s, v_num=70, val_loss=0.624, val_acc=0.692, train_acc=0.688]Metric val_loss improved by 0.010 >= min_delta = 0.0. New best score: 0.624
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 134.42it/s, v_num=70, val_loss=0.611, val_acc=0.660, train_acc=0.688]Metric val_loss improved by 0.013 >= min_delta = 0.0. New best score: 0.611
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 132.89it/s, v_num=70, val_loss=0.626, val_acc=0.683, train_acc=0.700]Monitored metric val_loss did not improve in the last 3 records. Best score: 0.611. Signaling Trainer to stop.
+Epoch 9: 100%|██████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 84.01it/s, v_num=70, val_loss=0.626, val_acc=0.683, train_acc=0.700] 
+[RL] Episode 19 => val_acc=0.6833, reward=0.6833
+[RL] Early stopping after 19 episodes because no val_acc improvement in last 10 episodes.
+[RL] Training finished.
+Best val_acc = 0.8036, with actions = {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'mlp', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 0.5}
+==> best_strategy.json has been saved. You can now run deploy_controller.py to do final test.
+PS C:\Users\Laplace\Desktop\CompSci\Independent\DP-GNN> python experiments/deploy_controller.py  
+[Deploy] Loaded best strategy for PROTEINS: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'mlp', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+[Deploy] Training on (train+val) with best synergy ...
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\configuration_validator.py:70: You defined a `validation_step` but have no `val_dataloader`. Skipping val loop.
+You are using a CUDA device ('NVIDIA GeForce RTX 5080') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\torch\nn\modules\module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  return t.to(
+
+  | Name  | Type          | Params | Mode 
+------------------------------------------------
+0 | model | ComposedModel | 9.0 K  | train
+------------------------------------------------
+9.0 K     Trainable params
+0         Non-trainable params
+9.0 K     Total params
+0.036     Total estimated model params size (MB)
+15        Modules in train mode
+0         Modules in eval mode
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance. 
+Epoch 0:   0%|                                                                                                                             | 0/32 [00:00<?, ?it/s]C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\utilities\data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 2. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+Epoch 19: 100%|███████████████████████████████████████████████████████████████████████████████████████| 32/32 [00:00<00:00, 155.05it/s, v_num=71, train_acc=0.744]`Trainer.fit` stopped: `max_epochs=20` reached.
+Epoch 19: 100%|███████████████████████████████████████████████████████████████████████████████████████| 32/32 [00:00<00:00, 150.58it/s, v_num=71, train_acc=0.744] 
+[Deploy] Testing on test set ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.  
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 172.51it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │         0.6953125         │
+│         test_loss         │    0.5545695424079895     │
+└───────────────────────────┴───────────────────────────┘
+[Deploy] Final test results => [{'test_loss': 0.5545695424079895, 'test_acc': 0.6953125}]
+PS C:\Users\Laplace\Desktop\CompSci\Independent\DP-GNN> 

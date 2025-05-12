@@ -1,0 +1,156 @@
+PS C:\Users\Laplace\Desktop\CompSci\Independent\DP-GNN> python experiments/train_rl_controller.py
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\torch\nn\modules\module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  return t.to(
+========== RL Episode 0 ==========
+[RL] Sampled actions: {'encoder': 'GCN', 'pooling': 'attention', 'readout': 'mlp', 'augment': 'spectral', 'hidden_dim': 32, 'dropout': 0.5, 'lr': 0.0001, 'bn': False, 'temperature': 0.5}
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\torch_geometric\deprecation.py:26: UserWarning: 'nn.glob.GlobalAttention' is deprecated, use 'nn.aggr.AttentionalAggregation' instead
+  warnings.warn(out)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 5080') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode 
+------------------------------------------------
+0 | model | ComposedModel | 3.4 K  | train
+------------------------------------------------
+3.4 K     Trainable params
+0         Non-trainable params
+3.4 K     Total params
+0.014     Total estimated model params size (MB)
+19        Modules in train mode
+0         Modules in eval mode
+Sanity Checking: |                                                                                                                             | 0/? [00:00<?, ?it/s]C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.
+Sanity Checking DataLoader 0:   0%|                                                                                                            | 0/2 [00:00<?, ?it/s]C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\utilities\data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 2. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.       
+Epoch 9: 100%|████████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 117.97it/s, v_num=17, val_loss=0.651, val_acc=0.669, train_acc=0.589]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                                                        
+Epoch 9: 100%|████████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 115.56it/s, v_num=17, val_loss=0.651, val_acc=0.669, train_acc=0.589] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+C:\Users\Laplace\AppData\Roaming\Python\Python313\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=27` in the `DataLoader` to improve performance.        
+Testing DataLoader 0: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 211.14it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │          0.59375          │
+│         test_loss         │    0.6725229024887085     │
+└───────────────────────────┴───────────────────────────┘
+[RL] test_acc = 0.5938
+[RL] Episode 0 => Reward=0.5938, Loss=4.2529
+========== RL Episode 1 ==========
+[RL] Sampled actions: {'encoder': 'GraphSAGE', 'pooling': 'attention', 'readout': 'mlp', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.0, 'lr': 0.0001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 17.5 K | train
+------------------------------------------------
+17.5 K    Trainable params
+0         Non-trainable params
+17.5 K    Total params
+0.070     Total estimated model params size (MB)
+23        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 141.41it/s, v_num=18, val_loss=0.585, val_acc=0.681, train_acc=0.705]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                                                        
+Epoch 9: 100%|████████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 136.53it/s, v_num=18, val_loss=0.585, val_acc=0.681, train_acc=0.705] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 232.68it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │         0.703125          │
+│         test_loss         │    0.6190686225891113     │
+└───────────────────────────┴───────────────────────────┘
+[RL] test_acc = 0.7031
+[RL] Episode 1 => Reward=0.7031, Loss=5.6770
+========== RL Episode 2 ==========
+[RL] Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'linear', 'augment': 'virtual', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': True, 'temperature': 1.0}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 4.8 K  | train
+------------------------------------------------
+4.8 K     Trainable params
+0         Non-trainable params
+4.8 K     Total params
+0.019     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|████████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 143.98it/s, v_num=19, val_loss=0.653, val_acc=0.635, train_acc=0.692]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                                                        
+Epoch 9: 100%|████████████████████████████████████████████████████████████| 28/28 [00:00<00:00, 140.05it/s, v_num=19, val_loss=0.653, val_acc=0.635, train_acc=0.692] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 241.81it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │         0.734375          │
+│         test_loss         │    0.5793493986129761     │
+└───────────────────────────┴───────────────────────────┘
+[RL] test_acc = 0.7344
+[RL] Episode 2 => Reward=0.7344, Loss=6.1709
+========== RL Episode 3 ==========
+[RL] Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'transformer', 'augment': 'virtual', 'hidden_dim': 64, 'dropout': 0.0, 'lr': 0.0001, 'bn': True, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 286 K  | train
+------------------------------------------------
+286 K     Trainable params
+0         Non-trainable params
+286 K     Total params
+1.144     Total estimated model params size (MB)
+24        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|█████████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.95it/s, v_num=20, val_loss=0.502, val_acc=0.748, train_acc=0.739]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                                                        
+Epoch 9: 100%|█████████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 14.84it/s, v_num=20, val_loss=0.502, val_acc=0.748, train_acc=0.739] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 53.47it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │           0.625           │
+│         test_loss         │    0.7497017979621887     │
+└───────────────────────────┴───────────────────────────┘
+[RL] test_acc = 0.6250
+[RL] Episode 3 => Reward=0.6250, Loss=4.7713
+========== RL Episode 4 ==========
+[RL] Sampled actions: {'encoder': 'GCN', 'pooling': 'mean', 'readout': 'transformer', 'augment': 'spectral', 'hidden_dim': 64, 'dropout': 0.5, 'lr': 0.001, 'bn': False, 'temperature': 0.5}
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name  | Type          | Params | Mode
+------------------------------------------------
+0 | model | ComposedModel | 285 K  | train
+------------------------------------------------
+285 K     Trainable params
+0         Non-trainable params
+285 K     Total params
+1.143     Total estimated model params size (MB)
+22        Modules in train mode
+0         Modules in eval mode
+Epoch 9: 100%|█████████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.22it/s, v_num=21, val_loss=0.681, val_acc=0.641, train_acc=0.732]`Trainer.fit` stopped: `max_epochs=10` reached.                                                                                                                        
+Epoch 9: 100%|█████████████████████████████████████████████████████████████| 28/28 [00:01<00:00, 16.09it/s, v_num=21, val_loss=0.681, val_acc=0.641, train_acc=0.732] 
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 56.65it/s] 
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │         0.640625          │
+│         test_loss         │    0.6700403094291687     │
+└───────────────────────────┴───────────────────────────┘
+[RL] test_acc = 0.6406
+[RL] Episode 4 => Reward=0.6406, Loss=4.3830
+[RL] Training finished. You can now sample best actions or evaluate further.

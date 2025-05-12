@@ -1,0 +1,15 @@
+{
+  "dataset_name": "ENZYMES",
+  "best_val_acc": 0.3973214328289032,
+  "best_actions": {
+    "encoder": "GCN",
+    "pooling": "attention",
+    "readout": "transformer",
+    "augment": "spectral",
+    "hidden_dim": 64,
+    "dropout": 0.5,
+    "lr": 0.001,
+    "bn": true,
+    "temperature": 1.0
+  }
+}
